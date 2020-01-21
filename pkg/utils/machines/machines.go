@@ -33,7 +33,7 @@ func GetMachinesByLabelSelector(c client.Client, selector *metav1.LabelSelector,
 		LabelSelector: sel,
 	}
 
-	if err = c.List(context.TODO(), machines, listOptions); err != nil {
+	if err = c.List(context.TODO(), listOptions, machines); err != nil {
 		return nil, err
 	}
 	return machines, nil

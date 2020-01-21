@@ -121,8 +121,9 @@ func (r *ReconcileNodeReboot) Reconcile(request reconcile.Request) (reconcile.Re
 }
 
 func isRebootInProgress(c client.Client, machineName string) (bool, error) {
+	listOptions := &client.ListOptions{}
 	machineRemediations := &mrv1.MachineRemediationList{}
-	if err := c.List(context.TODO(), machineRemediations); err != nil {
+	if err := c.List(context.TODO(), listOptions, machineRemediations); err != nil {
 		return false, err
 	}
 
