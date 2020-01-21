@@ -43,3 +43,7 @@ required = [
 name = "gopkg.in/fsnotify.v1"
 source = "https://github.com/fsnotify/fsnotify.git"
 version="v1.4.7"
+
+[[override]]
+name = "sigs.k8s.io/cluster-api"
+source = "https://github.com/openshift/cluster-api.git"

@@ -145,6 +145,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:1ba1d79f2810270045c328ae5d674321db34e3aae468eb4233883b473c5c0467"
+  name = "github.com/golang/glog"
+  packages = ["."]
+  pruneopts = "T"
+  revision = "23def4e6c14b4da8ac2ed8007337bc5eb5007998"
+
+[[projects]]
+  branch = "master"
   digest = "1:27393e8358fc10ff53201983a39e79cc90efe6376bdce08c27dc8a0a83109545"
   name = "github.com/golang/groupcache"
   packages = ["lru"]
@@ -359,6 +367,40 @@
   version = "v1.5.0"
 
 [[projects]]
+  branch = "master"
+  digest = "1:a4376b70736cfbd1d692085453d847010b7863bc9e7e7a745bd9977e2ab79f4e"
+  name = "github.com/openshift/api"
+  packages = ["config/v1"]
+  pruneopts = "T"
+  revision = "e7ccdda6ba67b868baceb40b6db943355967f26d"
+
+[[projects]]
+  branch = "integration"
+  digest = "1:c49c9300cc3bcc68bc1380ac1bad9ccc190f4f53c58dc208d805eda92c3b9279"
+  name = "github.com/openshift/cluster-api"
+  packages = [
+    "pkg/apis/cluster/common",
+    "pkg/apis/cluster/v1alpha1",
+    "pkg/apis/machine/common",
+    "pkg/apis/machine/v1beta1",
+    "pkg/controller/error",
+    "pkg/util",
+  ]
+  pruneopts = "T"
+  revision = "91fca585a85b163ddfd119fd09c128c9feadddca"
+
+[[projects]]
+  branch = "release-4.3"
+  digest = "1:d3c858e45a604bc900b86259c4c00007b906701c75a195aa2f460a6058f5b506"
+  name = "github.com/openshift/machine-api-operator"
+  packages = [
+    "pkg/apis/healthchecking",
+    "pkg/apis/healthchecking/v1beta1",
+  ]
+  pruneopts = "T"
+  revision = "f552d33b6daa5b21eac7c0fde89eaa675e23e78a"
+
+[[projects]]
   digest = "1:e5d0bd87abc2781d14e274807a470acd180f0499f8bf5bb18606e9ec22ad9de9"
   name = "github.com/pborman/uuid"
   packages = ["."]
@@ -389,6 +431,14 @@
   pruneopts = "T"
   revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
   version = "v0.8.1"
+
+[[projects]]
+  digest = "1:22aa691fe0213cb5c07d103f9effebcb7ad04bee45a0ce5fe5369d0ca2ec3a1f"
+  name = "github.com/pmezard/go-difflib"
+  packages = ["difflib"]
+  pruneopts = "T"
+  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
+  version = "v1.0.0"
 
 [[projects]]
   digest = "1:f0ba4576d4c8ffe0a200d1da86cfcfd9ad6baec4bf82878fba34c8e22882f1be"
@@ -459,6 +509,14 @@
   pruneopts = "T"
   revision = "298182f68c66c05229eb03ac171abe6e309ee79a"
   version = "v1.0.3"
+
+[[projects]]
+  digest = "1:1d6f160431ac08b6e39b374f2ae9e00c9780cd604d65a5364d7304cd939efd0c"
+  name = "github.com/stretchr/testify"
+  packages = ["assert"]
+  pruneopts = "T"
+  revision = "221dbe5ed46703ee255b1da0dec05086f5035f62"
+  version = "v1.4.0"
 
 [[projects]]
   digest = "1:1cb088da2add92b2955ba3f26d959e08e4639f53a50fb6cef36b5bc04b241103"
@@ -906,20 +964,28 @@
   revision = "5e22f3d471e6f24ca20becfdffdc6206c7cecac8"
 
 [[projects]]
-  branch = "release-0.1"
-  digest = "1:83846709b1e18c709c19308168b17ed3ac44d85a74c57d3de8406d1022b11454"
+  branch = "master"
+  digest = "1:3d4940838d577847d684974ac7e9f7dadca45885e249e65abc0d5a9b6d343f24"
+  name = "k8s.io/utils"
+  packages = ["pointer"]
+  pruneopts = "T"
+  revision = "5f6fbceb4c31d35291b2de756aeaae2ddeee3e92"
+
+[[projects]]
+  branch = "integration"
+  digest = "1:c49c9300cc3bcc68bc1380ac1bad9ccc190f4f53c58dc208d805eda92c3b9279"
   name = "sigs.k8s.io/cluster-api"
   packages = [
     "pkg/apis",
     "pkg/apis/cluster/common",
     "pkg/apis/cluster/v1alpha1",
+    "pkg/apis/machine/v1beta1",
     "pkg/controller/error",
     "pkg/controller/machine",
-    "pkg/controller/remote",
-    "pkg/util",
   ]
   pruneopts = "T"
-  revision = "dab3fe9a1047fc5e946a7ea975333f72bc9c85ae"
+  revision = "91fca585a85b163ddfd119fd09c128c9feadddca"
+  source = "https://github.com/openshift/cluster-api.git"
 
 [[projects]]
   digest = "1:fbd9138a454764d4037f8edeb7bdea3f4ef4ad24b672a52cceff2a9609aacf91"
@@ -1005,34 +1071,45 @@
   analyzer-version = 1
   input-imports = [
     "github.com/emicklei/go-restful",
+    "github.com/golang/glog",
     "github.com/metal3-io/baremetal-operator/pkg/apis",
     "github.com/metal3-io/baremetal-operator/pkg/apis/metal3/v1alpha1",
     "github.com/onsi/ginkgo",
     "github.com/onsi/gomega",
+    "github.com/openshift/api/config/v1",
+    "github.com/openshift/machine-api-operator/pkg/apis/healthchecking/v1beta1",
+    "github.com/stretchr/testify/assert",
     "golang.org/x/net/context",
+    "k8s.io/api/apps/v1",
     "k8s.io/api/core/v1",
+    "k8s.io/api/rbac/v1",
     "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1",
     "k8s.io/apimachinery/pkg/api/equality",
     "k8s.io/apimachinery/pkg/api/errors",
     "k8s.io/apimachinery/pkg/api/meta",
+    "k8s.io/apimachinery/pkg/api/resource",
     "k8s.io/apimachinery/pkg/apis/meta/v1",
     "k8s.io/apimachinery/pkg/labels",
     "k8s.io/apimachinery/pkg/runtime",
     "k8s.io/apimachinery/pkg/runtime/schema",
     "k8s.io/apimachinery/pkg/selection",
     "k8s.io/apimachinery/pkg/types",
+    "k8s.io/apimachinery/pkg/util/runtime",
     "k8s.io/client-go/discovery",
     "k8s.io/client-go/kubernetes/scheme",
     "k8s.io/client-go/plugin/pkg/client/auth/gcp",
     "k8s.io/client-go/rest",
+    "k8s.io/client-go/restmapper",
     "k8s.io/client-go/tools/cache",
     "k8s.io/client-go/tools/record",
     "k8s.io/code-generator/cmd/client-gen",
     "k8s.io/code-generator/cmd/deepcopy-gen",
     "k8s.io/klog",
+    "k8s.io/utils/pointer",
     "sigs.k8s.io/cluster-api/pkg/apis",
     "sigs.k8s.io/cluster-api/pkg/apis/cluster/common",
     "sigs.k8s.io/cluster-api/pkg/apis/cluster/v1alpha1",
+    "sigs.k8s.io/cluster-api/pkg/apis/machine/v1beta1",
     "sigs.k8s.io/cluster-api/pkg/controller/error",
     "sigs.k8s.io/cluster-api/pkg/controller/machine",
     "sigs.k8s.io/controller-runtime/pkg/cache",
